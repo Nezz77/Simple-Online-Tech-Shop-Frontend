@@ -9,7 +9,9 @@ body {
     flex-direction: column;
 }
 
-
+main{
+    flex: 1;
+}
 .logo {
     background-color: rgb(19, 15, 9);
     margin: 0;
