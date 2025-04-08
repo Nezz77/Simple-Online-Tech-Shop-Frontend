@@ -1,0 +1,159 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body> 
+    <div class="logo">
+        <img src="ftlogo.png" alt="Future Tech" class="d-block mx-auto bg-dark p-2" id="shop-image">
+    </div>
+    <div class="cabinet">
+        <img src="cabinet.png" usemap="#image-map" style="width: 100%; height: auto" id="shopmap">
+
+        <div id="tooltip"></div>
+
+        <map name="image-map">
+            <area data-label=" MacBooks" href="macbook.html" coords="46,205,335,347" shape="rect" />
+            <area data-label=" iPads" href="ipad.html" coords="49,359,337,483" shape="rect" />
+            <area data-label=" iPhones" href="iphone.html" coords="44,499,338,623" shape="rect" />
+            <area data-label=" iWatch" href="iwatch.html" coords="46,636,188,752" shape="rect" />
+            <area data-label=" AirPods" href="airpod.html" coords="197,635,335,750" shape="rect" />
+            <area data-label="Logitech Accessories" href="logitech.html" coords="346,202,672,345" shape="rect" />
+            <area data-label="Sony Headphones" href="sony.html" coords="353,361,674,620" shape="rect" />
+            <area data-label="Samsung Galaxy Books" href="galaxybook.html" coords="690,204,978,348" shape="rect" />
+            <area data-label="Samsung Galaxy Tabs" href="galaxytab.html" coords="691,359,977,483" shape="rect" />
+            <area data-label="Samsung Galaxy Phones" href="galaxyphone.html" coords="690,498,980,619" shape="rect" />
+            <area data-label="Samsung Galaxy Watch" href="galaxywatch.html" coords="691,636,828,753" shape="rect" />
+            <area data-label="Samsung Galaxy Buds" href="galaxybud.html" coords="835,635,978,752" shape="rect" />
+        </map>
+    </div>
+    <div class="container mt-4 info-section1">
+        <h2 class="mb-3">WHY US?</h2>
+        <p>At <b style="color:aqua;">Future Tech</b>, we’ve been proudly serving tech enthusiasts and professionals for
+            <b style="color:aqua;">over a decade</b> . We
+            specialize in offering <i><b style="color: aqua;">100% original, high-quality products</b></i>100% original,
+            high-quality products from globally trusted brands — no replicas, no
+            compromises. Our long-standing reputation for trustworthiness and excellent customer support has made us a
+            go-to destination for those who value both innovation and reliability. With a wide selection of cutting-edge
+            devices and accessories, and a loyal base of satisfied customers, we are proud to be one of the most
+            well-known tech shops in the region. Choose Future Tech — where quality meets trust.
+        </p>
+    </div>
+
+    <!-- slideshow -->
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="sb1.jpg" style="width:100%">
+            <div class="text"></div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="sb2.png" style="width:100%">
+            <div class="text"></div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="sb3.png" style="width:100%">
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="sb4.png" style="width:100%">
+            <div class="text"></div>
+        </div>
+        <div style="text-align:center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+    <br>
+
+
+    <div class="logo">
+        <img src="ftlogo.png" alt="Future Tech" class="d-block mx-auto bg-dark p-2" id="shop-image">
+    </div>
+
+    <script>
+        const originalWidth = 1024; // Your original image width
+
+        function storeOriginalCoords() {
+            document.querySelectorAll('area').forEach(area => {
+                if (!area.dataset.originalCoords) {
+                    area.dataset.originalCoords = area.coords;
+                }
+            });
+        }
+
+        function resizeImageMap() {
+            const image = document.getElementById('shopmap');
+            const scale = image.clientWidth / originalWidth;
+
+            document.querySelectorAll('area').forEach(area => {
+                const original = area.dataset.originalCoords.split(',').map(Number);
+                const scaled = original.map(coord => Math.round(coord * scale));
+                area.coords = scaled.join(',');
+            });
+        }
+
+        window.addEventListener('load', () => {
+            storeOriginalCoords();
+            resizeImageMap();
+        });
+
+        window.addEventListener('resize', resizeImageMap);
+
+        // Custom Tooltip
+        const tooltip = document.getElementById('tooltip');
+
+        document.querySelectorAll('area').forEach(area => {
+            area.addEventListener('mousemove', e => {
+                tooltip.style.left = `${e.pageX + 10}px`;
+                tooltip.style.top = `${e.pageY + 10}px`;
+                tooltip.innerText = area.dataset.label;
+                tooltip.style.display = 'block';
+            });
+
+            area.addEventListener('mouseleave', () => {
+                tooltip.style.display = 'none';
+            });
+        });
+
+        // slideshow
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 4000); 
+        }
+
+    </script>
+
+
+</body>
+
+</html>
