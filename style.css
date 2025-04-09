@@ -2,9 +2,10 @@ body{
     background-color: rgb(37, 35, 32);
 }
 .logo {
-    background-color: rgb(45, 44, 43);
+    background-color: rgb(46, 79, 145);
     margin: 0;
     padding: 0;
+    border-radius: 150px;
 
 }
 
@@ -117,8 +118,30 @@ img{
   from {opacity: .4} 
   to {opacity: 1}
 }
+/* botton navigation responsive */
+@media (max-width: 768px) {
+    /* Make logo stack on top, centered */
+    .position-absolute {
+        position: static !important;
+        transform: none !important;
+        margin-bottom: 1rem;
+    }
 
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
+    /* Stack left and right text sections vertically and center them */
+    .d-flex {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center;
+    }
+
+    /* Optional: reduce padding for smaller screens */
+    .py-3 {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    .px-4 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
 }
