@@ -27,3 +27,69 @@ img {
     height: 250px;
     width: 250px;
 }
+
+/* Product card styling */
+.product-card {
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    padding: 15px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* The pop-out hover effect */
+.product-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 255, 0.2);
+    z-index: 2;
+}
+
+/* Add a glow effect that matches your brand color */
+.product-card:hover {
+    box-shadow: 0 15px 30px rgba(0, 255, 255, 0.3);
+}
+
+/* Image styling */
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Optional: Make the image slightly larger on hover */
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Product info styling */
+.product-info {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.product-info h5 {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-info p {
+    color: #ff5722;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Add a subtle transition when hovering off */
+.product-card {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.4s ease;
+}
