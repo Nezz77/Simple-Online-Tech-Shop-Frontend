@@ -19,7 +19,10 @@
         <div class="container-fluid bg-dark text-white py-2">
             <div class="row align-items-center text-center">
                 <div class="col-4 text-start">
-                    <h1 class="mb-0"> <b> <i>FUTURE TECH</i></b></h1>
+                    <h6 class="mb-0"> <b> <i>123 Tech Street</i></b>
+                        <p><b> <i>Hikkaduwa,</i></b>
+                        <b> <i>SriLanka</i></b></p>
+                    </h6>
                 </div>
                 <div class="col-4">
                     <div class="logo">
@@ -110,13 +113,14 @@
         </div>
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-start">
             <div class="mb-3 mb-md-0">
+                <br>
                 <p class="mb-0">Your one-stop shop </p>
                 <p class="mb-0">For the latest tech gadgets.</p>
-                <p class="mb-0">Discover original, reliable products,</p>
-                <p class="mb-0">You can trust — only at our shop.</p>
+                <br>
+                
             </div>
             <div class="text-md-end">
-                <p class="mb-0">123 Tech Street,Nalagasdeniya</p>
+                <p class="mb-0">123 Tech Street</p>
                 <p class="mb-0">Hikkaduwa</p>
                 <p class="mb-0">Sri Lanka</p>
             </div>
@@ -124,7 +128,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
     <script>
-        const originalWidth = 1024; // Your original image width
+        const originalWidth = 1024; 
 
         function storeOriginalCoords() {
             document.querySelectorAll('area').forEach(area => {
@@ -189,58 +193,58 @@
             setTimeout(showSlides, 4000);
         }
 
-         // Futuretech Animation
-    document.addEventListener('DOMContentLoaded', () => {
-        const futuretechContainer = document.getElementById('futuretech-container');
-        const letters = "FUTURE TECH".split('');
-        const letterDelay = 100;
-        
-        // Create spans for each letter
-        letters.forEach((letter, index) => {
-            const span = document.createElement('span');
-            span.textContent = letter === ' ' ? '\u00A0' : letter;
-            span.className = 'futuretech-letter';
-            span.style.opacity = '0';
-            futuretechContainer.appendChild(span);
+        // Futuretech Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const futuretechContainer = document.getElementById('futuretech-container');
+            const letters = "FUTURE TECH".split('');
+            const letterDelay = 100;
+
+            // Create spans for each letter
+            letters.forEach((letter, index) => {
+                const span = document.createElement('span');
+                span.textContent = letter === ' ' ? '\u00A0' : letter;
+                span.className = 'futuretech-letter';
+                span.style.opacity = '0';
+                futuretechContainer.appendChild(span);
+            });
+
+            // Get all letter elements
+            const letterElements = document.querySelectorAll('.futuretech-letter');
+
+            // Create animation timeline
+            const timeline = new mojs.Timeline();
+
+            // Add animations for each letter
+            letterElements.forEach((el, index) => {
+                // Main entrance animation
+                timeline.add([
+                    new mojs.Tween({
+                        duration: 800,
+                        delay: letterDelay * index,
+                        onUpdate: function (progress) {
+                            el.style.opacity = progress;
+                            el.style.transform = `translateY(${(1 - progress) * 50}px) scale(${0.5 + (progress * 0.5)})`;
+                        }
+                    }),
+
+                    // Glow effect animation
+                    new mojs.Tween({
+                        duration: 2000,
+                        delay: letterDelay * index + 800,
+                        repeat: 999,
+                        onUpdate: function (progress) {
+                            const glowValue = Math.sin(progress * Math.PI) * 15;
+                            el.style.textShadow = `0 0 ${glowValue}px rgba(0, 255, 255, 0.8)`;
+                        }
+                    })
+                ]);
+            });
+
+            // Play the animation
+            setTimeout(() => {
+                timeline.play();
+            }, 500);
         });
-        
-        // Get all letter elements
-        const letterElements = document.querySelectorAll('.futuretech-letter');
-        
-        // Create animation timeline
-        const timeline = new mojs.Timeline();
-        
-        // Add animations for each letter
-        letterElements.forEach((el, index) => {
-            // Main entrance animation
-            timeline.add([
-                new mojs.Tween({
-                    duration: 800,
-                    delay: letterDelay * index,
-                    onUpdate: function(progress) {
-                        el.style.opacity = progress;
-                        el.style.transform = `translateY(${(1-progress) * 50}px) scale(${0.5 + (progress * 0.5)})`;
-                    }
-                }),
-                
-                // Glow effect animation
-                new mojs.Tween({
-                    duration: 2000,
-                    delay: letterDelay * index + 800,
-                    repeat: 999,
-                    onUpdate: function(progress) {
-                        const glowValue = Math.sin(progress * Math.PI) * 15;
-                        el.style.textShadow = `0 0 ${glowValue}px rgba(0, 255, 255, 0.8)`;
-                    }
-                })
-            ]);
-        });
-        
-        // Play the animation
-        setTimeout(() => {
-            timeline.play();
-        }, 500);
-    });
 
     </script>
 
