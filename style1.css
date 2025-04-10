@@ -53,7 +53,7 @@ img {
 
 /* Add a glow effect that matches your brand color */
 .product-card:hover {
-    box-shadow: 0 15px 30px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 15px 30px rgba(50, 171, 215, 0.576);
 }
 
 /* Image styling */
@@ -93,3 +93,42 @@ img {
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
                 box-shadow 0.4s ease;
 }
+
+/* Logo with Spinning Gradient Background */
+.logo-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+  }
+  
+  .gradient-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+    animation: rotate 4s steps(4) infinite;
+    z-index: 1;
+  }
+  
+  .logo-img {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    z-index: 2;
+    object-fit: contain;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+  
