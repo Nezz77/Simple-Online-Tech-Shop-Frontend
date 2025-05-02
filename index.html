@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FUTURE TECH</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -17,18 +21,21 @@
             <div id="futuretech-container"></div>
         </div>
         <div class="container-fluid bg-dark text-white py-2">
-            <div class="row align-items-center text-center">
+            <div class="row align-items-center text-center small">
+                <!-- Address -->
                 <div class="col-4 text-start">
-                    <h6 class="mb-0"> <b> <i>123 Tech Street</i></b>
-                        <p><b> <i>Hikkaduwa,</i></b>
-                        <b> <i>SriLanka</i></b></p>
-                    </h6>
+                    <p class="mb-0"><strong>123 Tech Street</strong></p>
+                    <p class="mb-0">Hikkaduwa, <strong>Sri Lanka</strong></p>
                 </div>
+    
+                <!-- Logo -->
                 <div class="col-4">
                     <div class="logo">
-                        <img src="ftlogo.png" alt="Future Tech" class="img-fluid" style="height: 100px;">
+                        <img src="ftlogo.png" alt="Future Tech" class="img-fluid" style="height: 80px;">
                     </div>
                 </div>
+    
+                <!-- Contact -->
                 <div class="col-4 text-end">
                     <p class="mb-0">
                         <i class="bi bi-telephone-fill"></i>
@@ -36,13 +43,13 @@
                     </p>
                     <p class="mb-0">
                         <i class="bi bi-envelope-fill"></i>
-                        <a href="mailto:info@futuretech.lk"
-                            class="text-white text-decoration-none">info@futuretech.lk</a>
+                        <a href="mailto:info@futuretech.lk" class="text-white text-decoration-none">info@futuretech.lk</a>
                     </p>
                 </div>
             </div>
         </div>
     </header>
+    
     <div class="cabinet">
         <img src="cabinet.png" usemap="#image-map" style="width: 100%; height: auto" id="shopmap">
 
@@ -54,7 +61,7 @@
             <area data-label=" iPhones" href="iphone.html" coords="44,499,338,623" shape="rect" />
             <area data-label=" iWatch" href="iwatch.html" coords="46,636,188,752" shape="rect" />
             <area data-label=" AirPods" href="airpod.html" coords="197,635,335,750" shape="rect" />
-            <area data-label="Logitech Accessories" href="logitech.html" coords="346,202,672,345" shape="rect" />
+            <area data-label="Logitech Accessories ⌨️🖱️" href="logitech.html" coords="346,202,672,345" shape="rect" />
             <area data-label="Sony Headphones 🎧" href="sony.html" coords="353,361,674,620" shape="rect" />
             <area data-label="Samsung Galaxy Books 💻" href="galaxybook.html" coords="690,204,978,348" shape="rect" />
             <area data-label="Samsung Galaxy Tabs 📱" href="galaxytab.html" coords="691,359,977,483" shape="rect" />
@@ -67,7 +74,7 @@
         <h2 class="mb-3">WHY US?</h2>
         <p>At <b style="color:aqua;">Future Tech</b>, we’ve been proudly serving tech enthusiasts and professionals for
             <b style="color:aqua;">over a decade</b> . We
-            specialize in offering <i><b style="color: aqua;">100% original, high-quality products</b></i>100% original,
+            specialize in offering <i><b style="color: aqua;">100% original,</b></i>
             high-quality products from globally trusted brands — no replicas, no
             compromises. Our long-standing reputation for trustworthiness and excellent customer support has made us a
             go-to destination for those who value both innovation and reliability. With a wide selection of cutting-edge
@@ -117,7 +124,7 @@
                 <p class="mb-0">Your one-stop shop </p>
                 <p class="mb-0">For the latest tech gadgets.</p>
                 <br>
-                
+
             </div>
             <div class="text-md-end">
                 <p class="mb-0">123 Tech Street</p>
@@ -128,7 +135,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
     <script>
-        const originalWidth = 1024; 
+        const originalWidth = 1024;
 
         function storeOriginalCoords() {
             document.querySelectorAll('area').forEach(area => {
